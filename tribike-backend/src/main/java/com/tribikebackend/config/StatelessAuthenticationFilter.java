@@ -28,11 +28,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
-/**
- *
- * @author igor
- * Filtro para testar se o recebido do usuário é válido
- */
 @Component
 @Import(TokenAuthenticationService.class)
 public class StatelessAuthenticationFilter extends GenericFilterBean {

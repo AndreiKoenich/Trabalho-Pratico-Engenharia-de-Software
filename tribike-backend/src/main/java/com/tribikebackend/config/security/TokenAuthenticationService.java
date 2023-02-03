@@ -19,11 +19,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-/**
- *
- * @author igor
- * Classe para adicionar um token a um usuário recebido e/ou criar um uma atenticação para um usuário que existe no banco de dados
- */
 @Component
 public class TokenAuthenticationService {
 
@@ -33,24 +28,11 @@ public class TokenAuthenticationService {
     private TokenHandler tokenHandler;
      private final Logger log = LoggerFactory.getLogger(TokenAuthenticationService.class);
 
-    /**
-     * Adiciona no cabeçalho um token válido para o usuário recebido na autenticação.
-     *
-     * @param response HttpServletResponse onde será inserido o token.
-     * @param authentication Autenticação com o usuário autorizado.
-     */
     public void addAuthentication(HttpServletResponse response, Authentication authentication) {
         final Usuario user = (Usuario) authentication.getPrincipal();
         response.addHeader(AUTH_HEADER_NAME, tokenHandler.createTokenForUser(user));
     }
 
-    /**
-     * Pega o token do HttpServletRequest, abre o token e pega o usuário e suas role e devolve em um objeto
-     * {@link Authentication}.
-     *
-     * @param request {@code HttpServletRequest} com o token no cabeçalho.
-     * @return Objeto {@link Authentication} com as informações do usuário.
-     */
     public Authentication getAuthentication(HttpServletRequest request) throws TokenNullException{
         final String token = request.getHeader(AUTH_HEADER_NAME);
         

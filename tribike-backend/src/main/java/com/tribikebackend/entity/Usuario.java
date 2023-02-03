@@ -22,8 +22,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String picture;
-    private String name;
+    private String username;
     private String email;
     private String passwordHash;
 

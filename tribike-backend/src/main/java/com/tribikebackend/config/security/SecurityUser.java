@@ -18,9 +18,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Serve como classe intermediária para procurar as informações do usuário dentro do Banco de Dados
- */
 public class SecurityUser extends LoginUserDto implements UserDetails {
 
     private boolean enabled;

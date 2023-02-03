@@ -6,6 +6,7 @@ import com.tribikebackend.entity.dto.UsuarioMiniDto;
 import com.tribikebackend.service.UsuarioService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +18,8 @@ import java.util.List;
 @RequestMapping("/usuario")
 public class UsuarioController {
     private static final Logger log = LoggerFactory.getLogger(UsuarioController.class);
+    @Autowired
     private UsuarioService service;
-
-    UsuarioController(UsuarioService service) {
-        this.service = service;
-    }
 
     @GetMapping("")
     public List<UsuarioFullDto> getAll() {
@@ -46,7 +44,7 @@ public class UsuarioController {
     public Usuario saveUsuario(@RequestBody Usuario usuario) {
         log.info("POST /user");
         log.info("Usuario: {}", usuario.getId());
-        log.info("Usuario: {}", usuario.getName());
+        log.info("Usuario: {}", usuario.getUsername());
         return service.save(usuario);
     }
 }

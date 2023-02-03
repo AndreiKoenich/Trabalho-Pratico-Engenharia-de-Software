@@ -101,7 +101,7 @@ public class LoginController {
         log.info("CURRENT USER ROLE /login/logged_user ");
         Usuario p = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Usuario u = usuarioService.findByEmail(p.getEmail());
-        System.out.println(u.getName());
+        System.out.println(u.getUsername());
         return u;
     }
 
@@ -118,7 +118,7 @@ public class LoginController {
     }
 
   /*  public static void main(String[] args) {
-        System.out.println(new BCryptPasswordEncoder().encode(""));
+        System.out.println(new BCryptPasswordEncoder().encode("senha123"));
     }*/
 
 }

@@ -41,11 +41,8 @@ public class UsuarioService {
 
         dto.setId(u.getId());
 
-        if (u.getPicture() != null) {
-            dto.setPicture(u.getPicture());
-        }
-        if (u.getName() != null) {
-            dto.setName(u.getName());
+        if (u.getUsername() != null) {
+            dto.setName(u.getUsername());
         }
         if (u.getEmail() != null) {
             dto.setEmail(u.getEmail());

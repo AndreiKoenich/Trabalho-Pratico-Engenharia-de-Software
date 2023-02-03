@@ -13,7 +13,7 @@ public class UsuarioMiniDto {
 
     public UsuarioMiniDto(Usuario usuario) {
         id = usuario.getId();
-        nome = usuario.getName();
+        nome = usuario.getUsername();
         email = usuario.getEmail();
     }
 }

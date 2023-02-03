@@ -12,33 +12,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@EnableWebSecurity/*
-@Import(CustomUserDetailsService.class)*/
+@EnableWebSecurity
 public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
 
-   /* @Autowired
-    private CustomUserDetailsService customUserDetailsService;*/
+
     @Autowired
     private StatelessAuthenticationFilter filter;
 
-  /*  protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(customUserDetailsService)
-                .passwordEncoder(new BCryptPasswordEncoder());
-
-    }*/
-
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
-        // http builder configurations for authorize requests and form login (see below)
         http.csrf().disable();
-        //http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
         http.authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers("/login").permitAll()
                 .anyRequest()
                 .permitAll();
-                //.authenticated();
     }
 
     @Bean

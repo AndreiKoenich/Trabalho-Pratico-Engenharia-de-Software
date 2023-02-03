@@ -16,11 +16,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-/**
- *
- * @author igor
- */
-
 @Component
 public class TokenHandler implements Serializable {
 
