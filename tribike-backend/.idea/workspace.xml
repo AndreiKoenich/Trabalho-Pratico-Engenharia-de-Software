@@ -4,7 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abec69e6-46ab-413d-8653-d7bd73f5e4ee" name="Changes" comment="" />
+    <list default="true" id="abec69e6-46ab-413d-8653-d7bd73f5e4ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/TribikeBackendApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/ExceptionHandlerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/MainWebAppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/ResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/SecSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/StatelessAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/security/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/security/SecurityUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/security/TokenAuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/config/security/TokenHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/entity/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/entity/dto/LoginUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/entity/dto/UsuarioFullDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/entity/dto/UsuarioMiniDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/exception/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/exception/TokenNullException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/repository/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tribikebackend/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto1/img1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto1/img2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto1/img3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto2/img4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto2/img5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto2/img6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/conjunto2/img7.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
