@@ -25,6 +25,7 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/bicicleta").permitAll()
                 .anyRequest()
                 .permitAll();
     }

@@ -117,8 +117,8 @@ public class LoginController {
         return new ResponseEntity<>(papel, HttpStatus.OK);
     }
 
-  /*  public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(new BCryptPasswordEncoder().encode("senha123"));
-    }*/
+    }
 
 }
