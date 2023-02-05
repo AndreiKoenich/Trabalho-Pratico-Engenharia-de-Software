@@ -34,7 +34,9 @@ public class Usuario {
             case 1:
                 return "ADMIN";
             case 2:
-                return "USUARIO";
+                return "LOCADOR";
+            case 3:
+                return "LOCATÁRIO";
             default:
                 return "";
         }
