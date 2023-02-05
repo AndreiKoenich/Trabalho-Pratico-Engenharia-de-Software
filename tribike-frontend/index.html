@@ -29,11 +29,12 @@
     </div>
     <div class="registration form">
       <header>Signup</header>
-      <form id="signup-form" action="http://localhost:8082/echo/post/user">
-        <input type="text" name="email" value="email" placeholder="Enter your email">
-        <input type="password" name="pwd" value="pwd" placeholder="Create a password">
+      <form id="signup-form" >
+        <input id="sign_user" type="text" required name="username" placeholder="Enter user name">
+        <input id="sign_mail" type="text" required name="email" placeholder="Enter your email">
+        <input id="sign_pwd" type="password" name="password" placeholder="Create a password">
         <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+        <input type="submit" class="button" value="Signup">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
