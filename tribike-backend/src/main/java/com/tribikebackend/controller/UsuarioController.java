@@ -1,6 +1,7 @@
 package com.tribikebackend.controller;
 
 import com.tribikebackend.entity.Usuario;
+import com.tribikebackend.entity.dto.NewUsuarioDto;
 import com.tribikebackend.entity.dto.UsuarioFullDto;
 import com.tribikebackend.entity.dto.UsuarioMiniDto;
 import com.tribikebackend.service.UsuarioService;
@@ -40,11 +41,11 @@ public class UsuarioController {
         return ResponseEntity.ok().body(new UsuarioMiniDto(usuarioCompleto));
     }
 
-    @PostMapping
-    public Usuario saveUsuario(@RequestBody Usuario usuario) {
+    @PostMapping("")
+    public Usuario saveUsuario(@RequestBody NewUsuarioDto usuario) {
         log.info("POST /user");
-        log.info("Usuario: {}", usuario.getId());
         log.info("Usuario: {}", usuario.getUsername());
+        log.info("Usuario: {}", usuario.getEmail());
         return service.save(usuario);
     }
 }

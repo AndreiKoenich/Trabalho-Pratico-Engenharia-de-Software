@@ -53,7 +53,7 @@ public class LoginController {
 
         if (securityUser == null) {
             log.info("Email "+ userEmail +" nao encontrado.");
-            String jsonResponse = "{ \"message\":\"Email incorreto.\"}";
+            String jsonResponse = "{ \"message\":\".\"}";
             return new ResponseEntity<>(jsonResponse, HttpStatus.FORBIDDEN);
         }
 
@@ -118,7 +118,7 @@ public class LoginController {
     }
 
     public static void main(String[] args) {
-        System.out.println(new BCryptPasswordEncoder().encode("senha123"));
+        System.out.println(new BCryptPasswordEncoder().encode("safd"));
     }
 
 }

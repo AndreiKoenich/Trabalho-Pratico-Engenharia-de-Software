@@ -1,10 +1,12 @@
 package com.tribikebackend.service;
 
 import com.tribikebackend.entity.Usuario;
+import com.tribikebackend.entity.dto.NewUsuarioDto;
 import com.tribikebackend.entity.dto.UsuarioFullDto;
 import com.tribikebackend.repository.UsuarioRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,9 +34,15 @@ public class UsuarioService {
         return repository.findAll();
     }
 
-    public Usuario save(Usuario u) {
-        return repository.save(u);
+    public Usuario save(NewUsuarioDto newUsuario) {
+        Usuario usuario = new Usuario();
+        usuario.setEmail(newUsuario.getEmail());
+        usuario.setUsername(newUsuario.getUsername());
+        String passwordHash = new BCryptPasswordEncoder().encode(newUsuario.getPassword());
+        usuario.setPasswordHash(passwordHash);
+        return repository.save(usuario);
     }
+
 
     public UsuarioFullDto convertToFullDto(Usuario u) {
         UsuarioFullDto dto = new UsuarioFullDto();
