@@ -6,6 +6,7 @@ com\tribikebackend\repository\BicicletaRepository.class
 com\tribikebackend\config\ExceptionHandlerConfig.class
 com\tribikebackend\config\security\CustomUserDetailsService.class
 com\tribikebackend\config\WebConfig.class
+com\tribikebackend\entity\dto\NewUsuarioDto.class
 com\tribikebackend\entity\Bicicleta.class
 com\tribikebackend\config\ResponseMessage.class
 com\tribikebackend\entity\dto\UsuarioMiniDto.class
