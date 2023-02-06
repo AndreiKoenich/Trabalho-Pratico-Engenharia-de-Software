@@ -11,32 +11,42 @@
   <script type="text/javascript" src="js/user_page.js"></script>
 </head>
 <body>
+  <div class="header">
+    <h1>TriBike</h1>
+  </div>
   <div class="container">
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
       <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Enter your password">
-        <a href="#">Forgot password?</a>
+        <input type="text" placeholder="Digite seu email">
+        <input type="password" placeholder="Digite sua senha">
+        <a href="#">Esqueceu a senha?</a>
         <input type="button" class="button" value="Login">
       </form>
       <div class="signup">
-        <span class="signup">Don't have an account?
-         <label for="check">Signup</label>
+        <span class="signup">Não possui cadastro?
+         <label for="check">Cadastrar</label>
         </span>
       </div>
     </div>
     <div class="registration form">
-      <header>Signup</header>
-      <form id="signup-form" action="http://localhost:8082/echo/post/user">
-        <input type="text" name="email" value="email" placeholder="Enter your email">
-        <input type="password" name="pwd" value="pwd" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+      <header>Cadastro</header>
+      <form id="signup-form" >
+        <input id="sign_user" type="text" required name="username" placeholder="Digite um nome de usuário">
+        <input id="sign_cpf" type="text" required name="cpf" placeholder="000.000.00-00">        
+        <input id="sign_mail" type="text" required name="email" placeholder="Digite seu email">
+        <input id="sign_ag" type="text" style="width: 45%;" required name="agenciaBancaria" placeholder="Ag">
+        <input id="sign_cc" type="text" style="margin-left: 8%; width: 45%;" required name="contaaBancaria" placeholder="CC">
+        Data de Nascimento:     
+        <input id="sign_dob" type="date" name="dataNascimento" min="1900-01-01" max="2022-12-31">
+        <input id="sign_end" type="text" required name="endereco" placeholder="Endereço">
+        <input id="sign_pwd" type="password" name="password" placeholder="Crie uma senha">
+        <input  id="confirm_pwd" type="password" placeholder="Confirme sua senha">
+        <input type="submit" class="button" value="Cadastrar">
       </form>
       <div class="signup">
-        <span class="signup">Already have an account?
+        <span class="signup">Já possui cadastro?
          <label for="check">Login</label>
         </span>
       </div>

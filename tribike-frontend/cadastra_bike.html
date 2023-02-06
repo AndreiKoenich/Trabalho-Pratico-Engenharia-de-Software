@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!---Coding By CoderGirl | www.codinglabweb.com--->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadastro de nova bicicleta | CoderGirl</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cadastra_bike.css">
+  <script type="text/javascript" src="js/cadastra_bike.js"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>TriBike</h1>
+  </div>
+  <div class="container">
+    <div class="newbike form">
+      <form id="newbike-form" >
+        <input id="bike_marca" type="text" required name="marca" placeholder="Marca *">
+        <input id="bike_modelo" type="text" required name="modelo" placeholder="Modelo * ">
+        <input id="bike_descricao" type="text" required name="descricao" placeholder="Descrição *">
+        <input id="bike_url" type="text"  name="url" placeholder="URL da foto da bicicleta">
+        <input id="bike_peso" type="text"  name="peso" placeholder="Peso (g)">
+        <input id="bike_acessorios" type="text"  name="aces" placeholder="Acessórios">
+        <input id="bike_preco" style="width: 45%;" type="text" required name="preco" placeholder="R$ 100,00">
+        <input id="bike_desconto" style="margin-left: 8%; width: 45%;" type="text" name="desc" placeholder="0.0%">
+        <input type="submit" class="button" value="Cadastrar">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
