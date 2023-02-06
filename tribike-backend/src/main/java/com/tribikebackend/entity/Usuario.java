@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -25,6 +26,11 @@ public class Usuario {
     private String username;
     private String email;
     private String passwordHash;
+    private String cpf;
+    private String agenciaBancaria;
+    private String contaBancaria;
+    private LocalDate dataNascimento;
+    private String endereco;
 
     @ColumnDefault(value = "2")
     private int papel;
