@@ -40,6 +40,16 @@ public class UsuarioService {
         usuario.setUsername(newUsuario.getUsername());
         String passwordHash = new BCryptPasswordEncoder().encode(newUsuario.getPassword());
         usuario.setPasswordHash(passwordHash);
+        usuario.setCpf(newUsuario.getCpf());
+        usuario.setAgenciaBancaria(newUsuario.getAgenciaBancaria());
+        usuario.setContaBancaria(newUsuario.getContaBancaria());
+        usuario.setEndereco(newUsuario.getEndereco());
+        usuario.setDataNascimento(newUsuario.getDataNascimento());
+        if (newUsuario.getPapel() != null) {
+            usuario.setPapel(newUsuario.getPapel());
+        } else {
+            usuario.setPapel(2);
+        }
         return repository.save(usuario);
     }
 

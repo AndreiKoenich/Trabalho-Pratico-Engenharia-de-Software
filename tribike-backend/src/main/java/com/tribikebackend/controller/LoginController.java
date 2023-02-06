@@ -91,7 +91,8 @@ public class LoginController {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
             authResponse = "Usuário logado";
         } catch (Exception e) {
-            throw new Exception("Erro ao autenticar usuário ", e);
+            e.printStackTrace();
+            throw new Exception("Bad credentials ", e);
         }
         return authResponse;
     }
