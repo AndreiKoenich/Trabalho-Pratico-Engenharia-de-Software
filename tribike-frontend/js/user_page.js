@@ -25,6 +25,16 @@ window.addEventListener("load", () => {
       data=data+document.getElementById("sign_mail").value;
       data=data+'\",    \"password\": \"';
       data=data+document.getElementById("sign_pwd").value;
+      data=data+'\",    \"cpf\": \"';
+      data=data+document.getElementById("sign_cpf").value;
+      data=data+'\",    \"agenciaBancaria\": \"';
+      data=data+document.getElementById("sign_ag").value;
+      data=data+'\",    \"contaaBancaria\": \"';
+      data=data+document.getElementById("sign_cc").value;
+      data=data+'\",    \"dataNascimento\": \"';
+      data=data+document.getElementById("sign_dob").value;
+      data=data+'\",    \"endereco\": \"';
+      data=data+document.getElementById("sign_end").value;      
       data=data+'\"}';
       console.log(data);
       XHR.send(data);

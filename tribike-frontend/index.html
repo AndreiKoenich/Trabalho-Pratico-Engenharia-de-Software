@@ -34,9 +34,15 @@
       <header>Cadastro</header>
       <form id="signup-form" >
         <input id="sign_user" type="text" required name="username" placeholder="Digite um nome de usuário">
+        <input id="sign_cpf" type="text" required name="cpf" placeholder="000.000.00-00">        
         <input id="sign_mail" type="text" required name="email" placeholder="Digite seu email">
+        <input id="sign_ag" type="text" style="width: 45%;" required name="agenciaBancaria" placeholder="Ag">
+        <input id="sign_cc" type="text" style="margin-left: 8%; width: 45%;" required name="contaaBancaria" placeholder="CC">
+        Data de Nascimento:     
+        <input id="sign_dob" type="date" name="dataNascimento" min="1900-01-01" max="2022-12-31">
+        <input id="sign_end" type="text" required name="endereco" placeholder="Endereço">
         <input id="sign_pwd" type="password" name="password" placeholder="Crie uma senha">
-        <input type="password" placeholder="Confirme sua senha">
+        <input  id="confirm_pwd" type="password" placeholder="Confirme sua senha">
         <input type="submit" class="button" value="Cadastrar">
       </form>
       <div class="signup">
