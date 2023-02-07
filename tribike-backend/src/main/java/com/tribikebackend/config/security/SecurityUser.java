@@ -28,6 +28,7 @@ public class SecurityUser extends LoginUserDto implements UserDetails {
     public SecurityUser(Usuario u) {
         super(u.getEmail(), u.getPasswordHash());
         this.roles = Collections.singletonList(u.getPapelString());
+        System.out.println(this.roles);
         this.enabled = true;
     }
 
@@ -39,7 +40,7 @@ public class SecurityUser extends LoginUserDto implements UserDetails {
             SimpleGrantedAuthority authority = new SimpleGrantedAuthority(s);
             authorities.add(authority);
         }
-        return authorities;
+        return Collections.emptyList();
     }
 
     @Override
