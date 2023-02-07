@@ -7,12 +7,12 @@ window.addEventListener("load", () => {
   
       // Define what happens on successful data submission
       XHR.addEventListener("load", (event) => {
-        alert(event.target.responseText);
+        alert('Cadastrado com sucesso!');
       });
   
       // Define what happens in case of error
       XHR.addEventListener("error", (event) => {
-        alert('Oops! Something went wrong.');
+        alert('Não foi possível completar o cadastro.');
       });
   
       // Set up our request
