@@ -47,10 +47,10 @@ public class TokenAuthenticationService {
             }
         }
         else{
-       /*     if(!String.valueOf(request.getRequestURI()).equals("/login")){
+            if(!String.valueOf(request.getRequestURI()).equals("/login")){
                 throw new TokenNullException(
                         "Current token is: NULL");
-            } */
+            }
         }
         return null;
     }
