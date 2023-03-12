@@ -10,10 +10,12 @@ public class UsuarioMiniDto {
     private Long id;
     private String nome;
     private String email;
+    private int papel;
 
     public UsuarioMiniDto(Usuario usuario) {
         id = usuario.getId();
         nome = usuario.getUsername();
         email = usuario.getEmail();
+        papel = usuario.getPapel();
     }
 }
