@@ -45,7 +45,7 @@ public class SecurityUser extends LoginUserDto implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.getPassword();
+        return this.getSenha();
     }
 
     @Override
