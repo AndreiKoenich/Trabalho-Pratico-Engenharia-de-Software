@@ -47,7 +47,8 @@ public class TokenAuthenticationService {
             }
         }
         else{
-            if(!String.valueOf(request.getRequestURI()).equals("/login")){
+            if(!String.valueOf(request.getRequestURI()).equals("/login") &&
+            !(String.valueOf(request.getRequestURI()).equals("/usuario") && request.getMethod().equals("POST"))){
                 throw new TokenNullException(
                         "Current token is: NULL");
             }

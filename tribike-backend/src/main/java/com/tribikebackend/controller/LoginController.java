@@ -58,7 +58,7 @@ public class LoginController {
         }
 
         try{
-            authenticate(userEmail, authenticationRequest.getSenha());
+            authenticate(userEmail, authenticationRequest.getPassword());
             Usuario u = usuarioService.findByEmail(userEmail);
             String token = tokenHandler.createTokenForUser(u);
     
@@ -83,7 +83,6 @@ public class LoginController {
 
     private String authenticate(String email, String password) throws Exception {
         log.info("AUTHENTICATE /login " + email);
-        log.info("PASSWORD: "+password);
         Objects.requireNonNull(email);
         Objects.requireNonNull(password);
         String authResponse = "";
