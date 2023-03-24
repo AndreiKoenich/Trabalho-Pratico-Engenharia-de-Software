@@ -1,6 +1,8 @@
 package com.tribikebackend.controller;
 
 import com.tribikebackend.entity.Bicicleta;
+import com.tribikebackend.entity.dto.BicicletaDto;
+import com.tribikebackend.entity.dto.NewBicicletaDto;
 import com.tribikebackend.service.BicicletaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/bicicleta")
@@ -20,25 +21,33 @@ public class BicicletaController {
     private BicicletaService bicicletaService;
 
     @GetMapping("")
-    public List<Bicicleta> getBicicletas() {
+    public List<BicicletaDto> getBicicletas(
+            @RequestParam(value = "usuario", required = false) Long userId) {
         log.info("GET /bicicleta");
-        List<Bicicleta> output = bicicletaService.findAll();
-        log.info("{} bicicletas encontradas", output.size());
-        return output;
+        if (userId != null) {
+            List<BicicletaDto> output = bicicletaService.findAllByUsuarioId(userId);
+            log.info("{} bicicletas encontradas", output.size());
+            return output;
+        } else {
+            List<BicicletaDto> output = bicicletaService.findAll();
+            log.info("{} bicicletas encontradas", output.size());
+            return output;
+        }
     }
 
     @PostMapping("")
-    public void postBicicleta(@RequestBody Bicicleta bicicleta) {
+    public ResponseEntity<BicicletaDto> postBicicleta(@RequestBody NewBicicletaDto bicicleta) {
         log.info("POST /bicicleta");
-        bicicletaService.save(bicicleta);
+        Bicicleta b = bicicletaService.save(bicicleta);
+        return ResponseEntity.ok(new BicicletaDto(b));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Bicicleta> getBicicleta(@PathVariable("id") Long id) {
+    public ResponseEntity<BicicletaDto> getBicicleta(@PathVariable("id") Long id) {
         log.info("GET /bicicleta/{}", id);
-        Optional<Bicicleta> bicicletaOptional = bicicletaService.findById(id);
-        if (bicicletaOptional.isPresent()) {
-            return ResponseEntity.ok(bicicletaOptional.get());
+        BicicletaDto bicicleta = bicicletaService.findById(id);
+        if (bicicleta != null) {
+            return ResponseEntity.ok(bicicleta);
         } else {
             return ResponseEntity.notFound().build();
         }

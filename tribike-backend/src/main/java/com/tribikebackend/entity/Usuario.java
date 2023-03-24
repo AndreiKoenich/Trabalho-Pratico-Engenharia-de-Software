@@ -7,11 +7,9 @@ import lombok.NoArgsConstructor;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -31,6 +29,10 @@ public class Usuario {
     private String contaBancaria;
     private LocalDate dataNascimento;
     private String endereco;
+    private String bairro;
+
+    @OneToMany
+    private List<Bicicleta> bicicletas;
 
     @ColumnDefault(value = "2")
     private int papel;
