@@ -7,9 +7,11 @@ import com.tribikebackend.service.BicicletaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -19,6 +21,16 @@ public class BicicletaController {
 
     @Autowired
     private BicicletaService bicicletaService;
+
+    @GetMapping("busca")
+    public List<BicicletaDto> buscaBicicletas(
+            @RequestParam(value = "bairro", required = false) String bairro,
+            @RequestParam(value = "dataInicio", required = false) @DateTimeFormat(pattern="yyyyMMdd") LocalDate dataInicio,
+            @RequestParam(value = "dataFim", required = false) @DateTimeFormat(pattern="yyyyMMdd") LocalDate dataFim
+            ) {
+        log.info("GET /bicicleta/busca");
+        return bicicletaService.findAvailable(bairro, dataInicio, dataFim);
+    }
 
     @GetMapping("")
     public List<BicicletaDto> getBicicletas(
