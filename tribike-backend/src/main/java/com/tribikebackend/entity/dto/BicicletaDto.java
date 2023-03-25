@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class BicicletaDto {
+    private Long id;
     private UsuarioMiniDto usuario;
     private String marca;
     private String modelo;
@@ -17,17 +18,18 @@ public class BicicletaDto {
     private String bairro;
 
     public BicicletaDto(Bicicleta b) {
-         marca = b.getMarca();
-         modelo = b.getModelo();
-         descricao = b.getDescricao();
-         preco = b.getPreco();
-         urlFoto = b.getUrlFoto();
-         peso = b.getPeso();
-         acessorios = b.getAcessorios();
-         desconto = b.getDesconto();
-         bairro = b.getBairro();
-         if (b.getUsuario() != null) {
-             usuario = new UsuarioMiniDto(b.getUsuario());
-         }
+        id = b.getId();
+        marca = b.getMarca();
+        modelo = b.getModelo();
+        descricao = b.getDescricao();
+        preco = b.getPreco();
+        urlFoto = b.getUrlFoto();
+        peso = b.getPeso();
+        acessorios = b.getAcessorios();
+        desconto = b.getDesconto();
+        bairro = b.getBairro();
+        if (b.getUsuario() != null) {
+            usuario = new UsuarioMiniDto(b.getUsuario());
+        }
     }
 }

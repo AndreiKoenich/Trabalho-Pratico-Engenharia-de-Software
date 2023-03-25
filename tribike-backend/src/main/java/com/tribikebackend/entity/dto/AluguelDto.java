@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Data
 public class AluguelDto {
+    private Long id;
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private Float precoTotal;
@@ -15,6 +16,7 @@ public class AluguelDto {
     private UsuarioMiniDto locatario;
 
     public AluguelDto(Aluguel a) {
+        id = a.getId();
         dataInicio = a.getDataInicio();
         dataFim = a.getDataFim();
         precoTotal = a.getPrecoTotal();
