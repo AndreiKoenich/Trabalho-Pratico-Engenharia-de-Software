@@ -20,6 +20,7 @@ public class Aluguel {
 
     private LocalDate dataInicio;
     private LocalDate dataFim;
+    private Float precoTotal;
 
     @ManyToOne
     private Bicicleta bicicleta;
@@ -29,4 +30,5 @@ public class Aluguel {
 
     @ManyToOne
     private Usuario locatario;
+
 }

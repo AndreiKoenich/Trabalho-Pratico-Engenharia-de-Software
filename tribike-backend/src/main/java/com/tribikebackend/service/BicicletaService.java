@@ -5,6 +5,7 @@ import com.tribikebackend.entity.Usuario;
 import com.tribikebackend.entity.dto.BicicletaDto;
 import com.tribikebackend.entity.dto.NewBicicletaDto;
 import com.tribikebackend.repository.BicicletaRepository;
+import com.tribikebackend.repository.UsuarioRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class BicicletaService {
     @Autowired
     private BicicletaRepository bicicletaRepository;
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioRepository usuarioRepository;
 
     public List<BicicletaDto> findAll() {
         return bicicletaRepository.findAll().stream().map(BicicletaDto::new).collect(Collectors.toList());
@@ -48,7 +49,7 @@ public class BicicletaService {
                                     .bairro(b.getBairro())
                                     .build();
         if (b.getUsuario() != null) {
-            Optional<Usuario> usuarioOptional = usuarioService.findById(b.getUsuario());
+            Optional<Usuario> usuarioOptional = usuarioRepository.findById(b.getUsuario());
             if (usuarioOptional.isPresent()) {
                 bicicleta.setUsuario(usuarioOptional.get());
             }

@@ -1,6 +1,8 @@
 package com.tribikebackend.controller;
 
 import com.tribikebackend.entity.Aluguel;
+import com.tribikebackend.entity.dto.AluguelDto;
+import com.tribikebackend.entity.dto.NewAluguelDto;
 import com.tribikebackend.service.AluguelService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/aluguel")
@@ -20,25 +21,26 @@ public class AluguelController {
     private AluguelService aluguelService;
 
     @GetMapping("")
-    public List<Aluguel> getAlugueis() {
+    public List<AluguelDto> getAlugueis() {
         log.info("GET /aluguel");
-        List<Aluguel> output = aluguelService.findAll();
+        List<AluguelDto> output = aluguelService.findAll();
         log.info("{} alugueis encontrados", output.size());
         return output;
     }
 
     @PostMapping("")
-    public void postAluguel(@RequestBody Aluguel a) {
+    public ResponseEntity<AluguelDto> postAluguel(@RequestBody NewAluguelDto aluguel) {
         log.info("POST /aluguel");
-        aluguelService.save(a);
+        Aluguel a = aluguelService.save(aluguel);
+        return ResponseEntity.ok(new AluguelDto(a));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Aluguel> getAluguel(@PathVariable("id") Long id) {
+    public ResponseEntity<AluguelDto> getAluguel(@PathVariable("id") Long id) {
         log.info("GET /aluguel/{}", id);
-        Optional<Aluguel> aluguelOptional = aluguelService.findById(id);
-        if (aluguelOptional.isPresent()) {
-            return ResponseEntity.ok(aluguelOptional.get());
+        AluguelDto aluguel = aluguelService.findById(id);
+        if (aluguel != null) {
+            return ResponseEntity.ok(aluguel);
         } else {
             return ResponseEntity.notFound().build();
         }
