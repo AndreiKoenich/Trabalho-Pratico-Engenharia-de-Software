@@ -37,6 +37,14 @@ public class AluguelService {
         return aluguelRepository.findAllByLocatarioId(id).stream().map(AluguelDto::new).collect(Collectors.toList());
     }
 
+    public List<AluguelDto> findAllByLocadorId(Long id) {
+        return aluguelRepository.findAllByLocadorId(id).stream().map(AluguelDto::new).collect(Collectors.toList());
+    }
+
+    public List<AluguelDto> findAllByLocatarioIdAndLocadorId(Long locatarioId, Long locadorId) {
+        return aluguelRepository.findAllByLocatarioIdAndLocadorId(locatarioId, locadorId).stream().map(AluguelDto::new).collect(Collectors.toList());
+    }
+
     public Aluguel save(NewAluguelDto a) {
         Aluguel aluguel = Aluguel.builder()
                 .dataInicio(a.getDataInicio())
