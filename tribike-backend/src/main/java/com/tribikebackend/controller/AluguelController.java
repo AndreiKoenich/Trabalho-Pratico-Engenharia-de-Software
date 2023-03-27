@@ -22,7 +22,7 @@ public class AluguelController {
 
     @GetMapping("")
     public List<AluguelDto> getAlugueis(
-            @RequestParam(value = "usuario", required = false) Long userId
+            @RequestParam(value = "locatario", required = false) Long userId
     ) {
         log.info("GET /aluguel");
         if (userId != null) {
