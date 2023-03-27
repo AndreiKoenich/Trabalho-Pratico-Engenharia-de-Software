@@ -33,6 +33,10 @@ public class AluguelService {
         return aluguelRepository.findAll().stream().map(AluguelDto::new).collect(Collectors.toList());
     }
 
+    public List<AluguelDto> findAllByLocatarioId(Long id) {
+        return aluguelRepository.findAllByLocatarioId(id).stream().map(AluguelDto::new).collect(Collectors.toList());
+    }
+
     public Aluguel save(NewAluguelDto a) {
         Aluguel aluguel = Aluguel.builder()
                 .dataInicio(a.getDataInicio())

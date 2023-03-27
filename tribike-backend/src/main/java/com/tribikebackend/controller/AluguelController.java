@@ -21,11 +21,19 @@ public class AluguelController {
     private AluguelService aluguelService;
 
     @GetMapping("")
-    public List<AluguelDto> getAlugueis() {
+    public List<AluguelDto> getAlugueis(
+            @RequestParam(value = "usuario", required = false) Long userId
+    ) {
         log.info("GET /aluguel");
-        List<AluguelDto> output = aluguelService.findAll();
-        log.info("{} alugueis encontrados", output.size());
-        return output;
+        if (userId != null) {
+            List<AluguelDto> output = aluguelService.findAllByLocatarioId(userId);
+            log.info("{} alugueis encontrados", output.size());
+            return output;
+        } else {
+            List<AluguelDto> output = aluguelService.findAll();
+            log.info("{} alugueis encontrados", output.size());
+            return output;
+        }
     }
 
     @PostMapping("")
